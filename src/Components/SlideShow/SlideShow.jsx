@@ -61,7 +61,7 @@ const SlideShow = () => {
     <>
       <div className="ContentContainer">
         <h1 id="headingContent">{Maincontents[contentIndex]}</h1>
-        <p>{Subcontents[contentIndex]}</p>
+        <p id="subHeadingContent">{Subcontents[contentIndex]}</p>
       </div>
       <div className="buttonsContainer">
         <button
