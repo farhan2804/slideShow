@@ -1,0 +1,72 @@
+.ContentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  background-color: #ffff;
+  filter: drop-shadow(0 0.5rem 1rem rgb(105, 104, 104));
+}
+.ContentContainer h1 {
+  margin-bottom: 15px;
+}
+.buttonsContainer {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+.buttonsContainer button {
+  margin-right: 20px;
+}
+#nextButton:disabled {
+  width: 80px;
+  height: 40px;
+  color: #fff;
+  background-color: #6f72b9;
+}
+
+#prevButton:disabled {
+  width: 80px;
+  height: 40px;
+  color: #fff;
+  background-color: #6f72b9;
+}
+
+#restartButton:disabled {
+  width: 80px;
+  height: 40px;
+  color: #fff;
+  background-color: #6f72b9;
+}
+
+#nextButton:not(:disabled),
+#prevButton:not(:disabled),
+#restartButton:not(:disabled) {
+  width: 80px;
+  height: 40px;
+  color: #fff; /* Change text color to white */
+  background-color: #0a0d41; /* Change background color to your desired color */
+}
+
+@media (max-width: 1350px) {
+  .ContentContainer {
+    width: 400px;
+    height: 250px;
+  }
+}
+@media (max-width: 470px) {
+  .ContentContainer {
+    width: 300px;
+    height: 200px;
+  }
+  #headingContent {
+    font-size: 20px;
+  }
+}
