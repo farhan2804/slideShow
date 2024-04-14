@@ -30,6 +30,7 @@
   height: 40px;
   color: #fff;
   background-color: #6f72b9;
+  cursor: not-allowed;
 }
 
 #prevButton:disabled {
@@ -37,6 +38,7 @@
   height: 40px;
   color: #fff;
   background-color: #6f72b9;
+  cursor: not-allowed;
 }
 
 #restartButton:disabled {
@@ -44,6 +46,7 @@
   height: 40px;
   color: #fff;
   background-color: #6f72b9;
+  cursor: not-allowed;
 }
 
 #nextButton:not(:disabled),
@@ -52,7 +55,8 @@
   width: 80px;
   height: 40px;
   color: #fff; /* Change text color to white */
-  background-color: #0a0d41; /* Change background color to your desired color */
+  background-color: #0a0d41; 
+  cursor:pointer;/* Change background color to your desired color */
 }
 
 @media (max-width: 1350px) {
