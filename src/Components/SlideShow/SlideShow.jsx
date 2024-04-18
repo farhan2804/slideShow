@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import "./SlideShow.css";
 const SlideShow = () => {
   const [contentIndex, setContentIndex] = useState(0); // Initial index of content
-  const [restartState, setRestartState] = useState(true);
-  const [prevState, setPrevState] = useState(true);
-  const [nextState, setNextState] = useState(false);
 
   const Maincontents = [
     "Today's Workout Plan",
@@ -20,41 +17,19 @@ const SlideShow = () => {
     "slightly bend you knees",
     "You Made it, have a nice day",
   ];
-  const changeContentNext = () => {
-    setRestartState(false);
-    setPrevState(false);
+  const isRestartDisabled = contentIndex === 0;
+  const isPrevDisabled = contentIndex === 0;
+  const isNextDisabled = contentIndex === Maincontents.length - 1;
+  const changeContentPrev = () => {
+    setContentIndex(contentIndex - 1);
+  };
 
-    setContentIndex((prevIndex) => {
-      if (prevIndex === Maincontents.length - 1) {
-        return prevIndex;
-      } else {
-        return prevIndex + 1;
-      }
-    });
-    if (contentIndex === Maincontents.length - 2) {
-      setNextState(true);
-    }
+  const changeContentNext = () => {
+    setContentIndex(contentIndex + 1);
   };
 
   const restartContent = () => {
     setContentIndex(0);
-    setRestartState(true);
-    setPrevState(true);
-    setNextState(false);
-  };
-  const changeContentPrev = () => {
-    setNextState(false);
-    setContentIndex((prevIndex) => {
-      if (prevIndex === 1) {
-        setRestartState(true);
-        setPrevState(true);
-      }
-      if (prevIndex === 0) {
-        return prevIndex;
-      } else {
-        return prevIndex - 1;
-      }
-    });
   };
 
   return (
@@ -66,21 +41,21 @@ const SlideShow = () => {
       <div className="buttonsContainer">
         <button
           id="restartButton"
-          disabled={restartState}
+          disabled={isRestartDisabled}
           onClick={restartContent}
         >
           Restart Button
         </button>
         <button
           id="prevButton"
-          disabled={prevState}
+          disabled={isPrevDisabled}
           onClick={changeContentPrev}
         >
           Previous Button
         </button>
         <button
           id="nextButton"
-          disabled={nextState}
+          disabled={isNextDisabled}
           onClick={changeContentNext}
         >
           Next Button
